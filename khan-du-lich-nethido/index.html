@@ -17,19 +17,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "Khăn mặt thể thao & du lịch NetHiDo",
-        "description": "Khăn thể thao đa năng hút ẩm nhanh",
-        "brand": {
-            "@type": "Brand",
-            "name": "NetHiDo"
-        }
-    }
-    </script>
-
     <style>
         * {
             margin: 0;
@@ -42,6 +29,7 @@
             background: #ffffff;
             color: #1E293B;
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
         html {
@@ -93,7 +81,7 @@
             color: #10B981;
         }
 
-        /* --- HERO SECTION WITH ANIMATION --- */
+        /* --- HERO SECTION --- */
         .hero {
             height: 100vh;
             position: relative;
@@ -318,3 +306,283 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .app:hover img {
+            transform: scale(1.08);
+        }
+
+        .app-info {
+            padding: 20px;
+            text-align: center;
+            background: #0EA5E9;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+
+        .app:hover .app-info {
+            background: #10B981;
+        }
+
+        .spec {
+            background: #F0FDFA;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.04);
+        }
+
+        td {
+            padding: 18px;
+            border: 1px solid #E2E8F0;
+            color: #475569;
+        }
+
+        td:first-child {
+            font-weight: 600;
+            color: #0EA5E9;
+            width: 30%;
+        }
+
+        .review {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,.03);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(16, 185, 129, 0.1);
+        }
+
+        .review:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(16, 185, 129, 0.1);
+            border-color: #10B981;
+        }
+
+        .review p {
+            margin-top: 10px;
+            font-style: italic;
+            color: #475569;
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #0EA5E9, #10B981);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background: #0F172A;
+            color: #94A3B8;
+            padding: 60px 20px;
+        }
+
+        footer h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        @media(max-width:768px){
+            header { padding: 12px; }
+            .menu { display: none; }
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 16px; }
+            .title h2 { font-size: 28px; }
+            section { padding: 60px 0; }
+            .about-content { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">NetHiDo</div>
+                <div class="menu">
+                    <a href="#">Trang chủ</a>
+                    <a href="#about">Giới thiệu</a>
+                    <a href="#feature">Đặc điểm</a>
+                    <a href="#contact">Liên hệ</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Khăn mặt thể thao & du lịch NetHiDo</h1>
+            <p>Hút ẩm nhanh • Mềm mại • Nhẹ gọn • Bền bỉ</p>
+            <p>Người bạn đồng hành lý tưởng cho mọi hoạt động thể thao, tập luyện và du lịch.</p>
+            <button class="btn primary">Mua ngay</button>
+            <button class="btn secondary">Tìm hiểu thêm</button>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="title">
+                <h2>Giới thiệu sản phẩm</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Khăn mặt thể thao & du lịch NetHiDo được thiết kế đặc thù dành cho người thường xuyên vận động mạnh, chơi thể thao chuyên nghiệp hoặc có tần suất di chuyển cao.</p>
+                    <br>
+                    <p>Sử dụng công nghệ sợi tiên tiến giúp khăn tối ưu hóa khả năng <strong>lau khô siêu tốc</strong>, bề mặt tiếp xúc <strong>mềm mại bảo vệ làn da</strong> khỏi trầy xước và kết cấu siêu nhẹ gọn, dễ dàng bỏ túi mang đi khắp mọi nơi.</p>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1628156108169-be54cf1777b7?auto=format&fit=crop&w=600&q=80" alt="Giới thiệu khăn NetHiDo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="feature">
+        <div class="container">
+            <div class="title">
+                <h2>Đặc điểm nổi bật</h2>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="icon">✓</div>
+                    <h3>Hút ẩm tốt</h3>
+                    <p>Giúp lau khô nhanh khi vận động mạnh</p>
+                </div>
+                <div class="card">
+                    <div class="icon">✓</div>
+                    <h3>Mềm mại</h3>
+                    <p>Êm dịu với làn da</p>
+                </div>
+                <div class="card">
+                    <div class="icon">✓</div>
+                    <h3>Nhẹ & gọn</h3>
+                    <p>Dễ mang theo</p>
+                </div>
+                <div class="card">
+                    <div class="icon">✓</div>
+                    <h3>Độ bền cao</h3>
+                    <p>Ít xù lông</p>
+                </div>
+                <div class="card">
+                    <div class="icon">✓</div>
+                    <h3>Không xơ vải</h3>
+                    <p>Phù hợp khi vận động</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="title">
+                <h2>Ứng dụng thực tế</h2>
+            </div>
+            <div class="app-grid">
+                <div class="app">
+                    <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=400&q=80" alt="Gym">
+                    <div class="app-info">🏋️ Gym & Fitness</div>
+                </div>
+                <div class="app">
+                    <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=400&q=80" alt="Pickleball">
+                    <div class="app-info">🏓 Pickleball & Tennis</div>
+                </div>
+                <div class="app">
+                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=400&q=80" alt="Chạy bộ">
+                    <div class="app-info">🏃 Chạy bộ & Marathon</div>
+                </div>
+                <div class="app">
+                    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=400&q=80" alt="Du lịch">
+                    <div class="app-info">✈️ Du lịch & Phượt</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="spec">
+        <div class="container">
+            <div class="title">
+                <h2>Thông số sản phẩm</h2>
+            </div>
+            <table>
+                <tr>
+                    <td>Tên</td>
+                    <td>Khăn mặt thể thao & du lịch NetHiDo</td>
+                </tr>
+                <tr>
+                    <td>Loại</td>
+                    <td>Khăn thể thao đa năng</td>
+                </tr>
+                <tr>
+                    <td>Đặc tính</td>
+                    <td>Hút ẩm nhanh • Mềm mại • Nhẹ • Bền • Không xơ</td>
+                </tr>
+                <tr>
+                    <td>Ứng dụng</td>
+                    <td>Lau mặt, cổ, tay khi vận động</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="title">
+                <h2>Khách hàng đánh giá</h2>
+            </div>
+            <div class="cards">
+                <div class="review">
+                    <div style="color: #10B981;">⭐⭐⭐⭐⭐</div>
+                    <p>Khăn thấm hút rất tốt khi chơi pickleball</p>
+                </div>
+                <div class="review">
+                    <div style="color: #10B981;">⭐⭐⭐⭐⭐</div>
+                    <p>Nhẹ và tiện mang đi gym</p>
+                </div>
+                <div class="review">
+                    <div style="color: #10B981;">⭐⭐⭐⭐⭐</div>
+                    <p>Dùng du lịch rất phù hợp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Sẵn sàng đồng hành cùng mọi hoạt động?</h2>
+            <br>
+            <button class="btn primary">Đặt mua ngay</button>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <h2>CÔNG TY TNHH SX TM CỎ BA LÁ</h2>
+            <p>📍 Đội 1 - Thôn Xuân Lai - Xã Gia Bình - Tỉnh Bắc Ninh</p>
+            <p>✉️ cobalacompany2026@gmail.com</p>
+            <p>📞 Liên hệ doanh nghiệp</p>
+            <br>
+            <p style="font-size: 14px; color: #94A3B8;">&copy; 2026 CÔNG TY TNHH SX TM CỎ BA LÁ. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
