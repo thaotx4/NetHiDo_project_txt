@@ -11,7 +11,7 @@
     <meta property="og:title" content="Khăn mặt thể thao & du lịch NetHiDo">
     <meta property="og:description" content="Người bạn đồng hành lý tưởng cho mọi hoạt động thể thao, tập luyện và du lịch">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:image" content="khan sport nethido.jpg">
     
     <link rel="icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +40,7 @@
 
         body {
             background: #fff;
-            color: #222;
+            color: #1E293B; /* Xanh xám đậm - dịu mắt và hiện đại hơn màu đen */
             overflow-x: hidden;
         }
 
@@ -58,9 +58,10 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px); /* Làm mờ nền phía sau thanh menu giống các trang cao cấp */
             z-index: 1000;
-            box-shadow: 0 5px 20px rgba(0,0,0,.08);
+            box-shadow: 0 4px 20px rgba(14, 165, 233, 0.05);
             padding: 18px;
         }
 
@@ -73,7 +74,7 @@
         .logo {
             font-size: 28px;
             font-weight: 800;
-            color: #0f4c81;
+            color: #0EA5E9; /* Fresh: Xanh Sky Blue */
         }
 
         .menu {
@@ -83,74 +84,113 @@
 
         .menu a {
             text-decoration: none;
-            color: #222;
+            color: #334155;
             font-weight: 500;
             transition: color 0.3s;
         }
 
         .menu a:hover {
-            color: #f5a623;
+            color: #10B981; /* Fresh: Hover ra xanh bạc hà */
         }
 
+        /* --- HIỆU ỨNG ZOOM ẢNH NỀN HERO --- */
         .hero {
             height: 100vh;
-            /* Link ảnh nền Hero Public từ Unsplash */
-            background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
+            position: relative;
+            overflow: hidden;
             display: flex;
             align-items: center;
             color: white;
             text-align: center;
         }
 
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.5)), url('khan sport nethido.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            animation: zoomBg 20s infinite alternate ease-in-out;
+        }
+
+        @keyframes zoomBg {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.08); }
+        }
+
         .hero-content {
             max-width: 850px;
             margin: auto;
+            position: relative;
+            z-index: 2;
         }
 
         .hero h1 {
             font-size: 60px;
             margin-bottom: 20px;
             text-transform: uppercase;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            text-shadow: 0 4px 15px rgba(15, 23, 42, 0.4);
         }
 
         .hero p {
             font-size: 22px;
             margin-bottom: 30px;
+            text-shadow: 0 2px 8px rgba(15, 23, 42, 0.4);
         }
 
+        /* --- NÚT BẤM CÓ HIỆU ỨNG QUÉT SÁNG --- */
         .btn {
             padding: 16px 32px;
             border: none;
             border-radius: 50px;
             cursor: pointer;
             font-weight: 700;
-            transition: .3s;
+            transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             margin: 10px;
             text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
         }
 
         .primary {
-            background: #f5a623;
+            background: #10B981; /* Fresh: Xanh Bạc Hà */
             color: white;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .primary::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -60%; width: 30%; height: 200%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(30deg);
+            animation: shine 4s infinite ease-in-out;
+        }
+
+        @keyframes shine {
+            0% { left: -60%; }
+            15% { left: 130%; }
+            100% { left: 130%; }
         }
 
         .primary:hover {
             transform: translateY(-5px);
-            background: #ff8c00;
-            box-shadow: 0 5px 15px rgba(245, 166, 35, 0.4);
+            background: #059669; /* Mint đậm hơn khi hover */
+            box-shadow: 0 8px 25px rgba(5, 150, 105, 0.4);
         }
 
         .secondary {
             background: white;
-            color: #0f4c81;
+            color: #0EA5E9;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
         .secondary:hover {
             transform: translateY(-5px);
-            background: #f0f0f0;
+            background: #f8fafc;
+            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.15);
         }
 
         section {
@@ -164,11 +204,23 @@
 
         .title h2 {
             font-size: 42px;
-            color: #0f4c81;
+            color: #0EA5E9; /* Tiêu đề màu Fresh xanh sky */
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 60px; height: 4px;
+            background: #10B981; /* Thanh trang trí màu bạc hà */
+            border-radius: 2px;
         }
 
         .about {
-            background: #f8fbff;
+            background: #F0FDFA; /* Nền xanh mint cực nhạt rất dễ chịu */
         }
 
         .about-content {
@@ -181,6 +233,7 @@
             flex: 1;
             font-size: 18px;
             line-height: 1.8;
+            color: #334155;
         }
 
         .about-img {
@@ -190,7 +243,12 @@
         .about-img img {
             width: 100%;
             border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 30px rgba(16, 185, 129, 0.1);
+            transition: transform 0.5s ease;
+        }
+
+        .about-img img:hover {
+            transform: scale(1.03);
         }
 
         .cards {
@@ -199,22 +257,31 @@
             gap: 25px;
         }
 
+        /* --- HIỆU ỨNG NỔI KHỐI CHO CARD ĐẶC ĐIỂM --- */
         .card {
             background: white;
             padding: 35px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,.08);
-            transition: .3s;
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.04);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid rgba(16, 185, 129, 0.08);
         }
 
         .card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.12);
+            border-color: #10B981;
         }
 
         .icon {
             font-size: 40px;
             margin-bottom: 15px;
-            color: #f5a623;
+            color: #10B981; /* Đổi icon tích sang màu xanh mint */
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .icon {
+            transform: scale(1.2) rotate(10deg);
         }
 
         .app-grid {
@@ -227,301 +294,27 @@
             background: white;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            transition: 0.3s;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            transition: all 0.4s ease;
         }
 
         .app:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(14, 165, 233, 0.15);
         }
 
         .app img {
             width: 100%;
             height: 200px;
             object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .app:hover img {
+            transform: scale(1.08);
         }
 
         .app-info {
             padding: 20px;
             text-align: center;
-            background: #0f4c81;
-            color: white;
-            font-weight: 600;
-            font-size: 18px;
-        }
-
-        .spec {
-            background: #f8fbff;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,.04);
-        }
-
-        td {
-            padding: 18px;
-            border: 1px solid #eee;
-        }
-
-        td:first-child {
-            font-weight: 600;
-            color: #0f4c81;
-            width: 30%;
-        }
-
-        .review {
-            text-align: center;
-            padding: 30px;
-            background: white;
-            box-shadow: 0 10px 20px rgba(0,0,0,.08);
-            border-radius: 20px;
-        }
-
-        .review p {
-            margin-top: 10px;
-            font-style: italic;
-        }
-
-        .cta {
-            background: linear-gradient(135deg, #0f4c81, #0b6ec7);
-            color: white;
-            text-align: center;
-        }
-
-        .cta h2 {
-            font-size: 36px;
-        }
-
-        footer {
-            background: #111;
-            color: #ccc;
-            padding: 60px 20px;
-        }
-
-        footer h2 {
-            color: white;
-            margin-bottom: 20px;
-        }
-
-        footer p {
-            margin: 10px 0;
-        }
-
-        .fade {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .fade.show {
-            opacity: 1;
-            transform: none;
-        }
-
-        @media(max-width:768px){
-            header { padding: 12px; }
-            .menu { display: none; }
-            .hero h1 { font-size: 36px; }
-            .hero p { font-size: 18px; }
-            .title h2 { font-size: 30px; }
-            section { padding: 60px 0; }
-            .about-content { flex-direction: column; text-align: center; }
-        }
-    </style>
-</head>
-
-<body>
-
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">NetHiDo</div>
-                <div class="menu">
-                    <a href="#">Trang chủ</a>
-                    <a href="#about">Giới thiệu</a>
-                    <a href="#feature">Đặc điểm</a>
-                    <a href="#contact">Liên hệ</a>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="hero-content fade">
-            <h1>Khăn mặt thể thao & du lịch NetHiDo</h1>
-            <p>Hút ẩm nhanh • Mềm mại • Nhẹ gọn • Bền bỉ</p>
-            <p>Người bạn đồng hành lý tưởng cho mọi hoạt động thể thao, tập luyện và du lịch.</p>
-            <button class="btn primary">Mua ngay</button>
-            <button class="btn secondary">Tìm hiểu thêm</button>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <div class="container fade">
-            <div class="title">
-                <h2>Giới thiệu sản phẩm</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Khăn mặt thể thao & du lịch NetHiDo được thiết kế đặc thù dành cho người thường xuyên vận động mạnh, chơi thể thao chuyên nghiệp hoặc có tần suất di chuyển cao.</p>
-                    <br>
-                    <p>Sử dụng công nghệ sợi tiên tiến giúp khăn tối ưu hóa khả năng <strong>lau khô siêu tốc</strong>, bề mặt tiếp xúc <strong>mềm mại bảo vệ làn da</strong> khỏi trầy xước và kết cấu siêu nhẹ gọn, dễ dàng bỏ túi mang đi khắp mọi nơi.</p>
-                </div>
-                <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1628156108169-be54cf1777b7?auto=format&fit=crop&w=600&q=80" alt="Giới thiệu khăn NetHiDo">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="feature">
-        <div class="container">
-            <div class="title">
-                <h2>Đặc điểm nổi bật</h2>
-            </div>
-            <div class="cards">
-                <div class="card fade">
-                    <div class="icon">✓</div>
-                    <h3>Hút ẩm tốt</h3>
-                    <p>Giúp lau khô nhanh khi vận động mạnh</p>
-                </div>
-                <div class="card fade">
-                    <div class="icon">✓</div>
-                    <h3>Mềm mại</h3>
-                    <p>Êm dịu với làn da</p>
-                </div>
-                <div class="card fade">
-                    <div class="icon">✓</div>
-                    <h3>Nhẹ & gọn</h3>
-                    <p>Dễ mang theo</p>
-                </div>
-                <div class="card fade">
-                    <div class="icon">✓</div>
-                    <h3>Độ bền cao</h3>
-                    <p>Ít xù lông</p>
-                </div>
-                <div class="card fade">
-                    <div class="icon">✓</div>
-                    <h3>Không xơ vải</h3>
-                    <p>Phù hợp khi vận động</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <div class="title">
-                <h2>Ứng dụng thực tế</h2>
-            </div>
-            <div class="app-grid">
-                <div class="app fade">
-                    <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=400&q=80" alt="Gym">
-                    <div class="app-info">🏋️ Gym & Fitness</div>
-                </div>
-                <div class="app fade">
-                    <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=400&q=80" alt="Pickleball / Tennis">
-                    <div class="app-info">🏓 Pickleball & Tennis</div>
-                </div>
-                <div class="app fade">
-                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=400&q=80" alt="Chạy bộ">
-                    <div class="app-info">🏃 Chạy bộ & Marathon</div>
-                </div>
-                <div class="app fade">
-                    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=400&q=80" alt="Du lịch">
-                    <div class="app-info">✈️ Du lịch & Phượt</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="spec">
-        <div class="container">
-            <div class="title">
-                <h2>Thông số sản phẩm</h2>
-            </div>
-            <table>
-                <tr>
-                    <td>Tên</td>
-                    <td>Khăn mặt thể thao & du lịch NetHiDo</td>
-                </tr>
-                <tr>
-                    <td>Loại</td>
-                    <td>Khăn thể thao đa năng</td>
-                </tr>
-                <tr>
-                    <td>Đặc tính</td>
-                    <td>Hút ẩm nhanh • Mềm mại • Nhẹ • Bền • Không xơ</td>
-                </tr>
-                <tr>
-                    <td>Ứng dụng</td>
-                    <td>Lau mặt, cổ, tay khi vận động</td>
-                </tr>
-            </table>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <div class="title">
-                <h2>Khách hàng đánh giá</h2>
-            </div>
-            <div class="cards">
-                <div class="review">
-                    <div style="color: #f5a623;">⭐⭐⭐⭐⭐</div>
-                    <p>Khăn thấm hút rất tốt khi chơi pickleball</p>
-                </div>
-                <div class="review">
-                    <div style="color: #f5a623;">⭐⭐⭐⭐⭐</div>
-                    <p>Nhẹ và tiện mang đi gym</p>
-                </div>
-                <div class="review">
-                    <div style="color: #f5a623;">⭐⭐⭐⭐⭐</div>
-                    <p>Dùng du lịch rất phù hợp</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta">
-        <div class="container">
-            <h2>Sẵn sàng đồng hành cùng mọi hoạt động?</h2>
-            <br>
-            <button class="btn primary">Đặt mua ngay</button>
-        </div>
-    </section>
-
-    <footer id="contact">
-        <div class="container">
-            <h2>CÔNG TY TNHH SX TM CỎ BA LÁ</h2>
-            <p>📍 Đội 1 - Thôn Xuân Lai - Xã Gia Bình - Tỉnh Bắc Ninh</p>
-            <p>✉️ cobalacompany2026@gmail.com</p>
-            <p>📞 Liên hệ doanh nghiệp</p>
-            <br>
-            <p style="font-size: 14px; color: #666;">&copy; 2026 CÔNG TY TNHH SX TM CỎ BA LÁ. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        const fadeItems = document.querySelectorAll(".fade");
-
-        const checkFade = () => {
-            fadeItems.forEach(item => {
-                let top = item.getBoundingClientRect().top;
-                if (top < window.innerHeight - 60) {
-                    item.classList.add("show");
-                }
-            });
-        };
-
-        window.addEventListener("scroll", checkFade);
-        window.addEventListener("DOMContentLoaded", checkFade);
-    </script>
-
-</body>
-</html>
+            background: #0EA5E9; /* Màu nền nhãn ứng dụng */
